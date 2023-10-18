@@ -13,6 +13,12 @@ import data.Ingredient.Type;
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
+    private IngredientRepository ingredientRepo;
+
+    public IngredientByIdConverter(IngredientRepository ingredientRepo) {
+        this.ingredientRepo = ingredientRepo;
+    }
+    /*
     private Map<String, Ingredient> ingredientMap = new HashMap<>();
 
     public IngredientByIdConverter() {
@@ -27,9 +33,11 @@ public class IngredientByIdConverter implements Converter<String, Ingredient> {
         ingredientMap.put("SLSA", new Ingredient("SLSA", "Salsa", Type.SAUCE));
         ingredientMap.put("SRCR", new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
     }
+
+     */
     @Override
     public Ingredient convert(String id) {
-        return ingredientMap.get(id);
+        return ingredientRepo.findById(id).orElse(null);
     }
 
 }
