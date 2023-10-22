@@ -1,4 +1,4 @@
-package data;
+package com.example.tacocloudwithjpa.data;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

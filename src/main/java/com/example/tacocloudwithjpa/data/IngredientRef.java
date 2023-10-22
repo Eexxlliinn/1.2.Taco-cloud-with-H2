@@ -1,4 +1,4 @@
-package data;
+package com.example.tacocloudwithjpa.data;
 import lombok.Data;
 @Data
 public class IngredientRef {

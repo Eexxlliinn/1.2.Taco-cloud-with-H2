@@ -1,6 +1,6 @@
 package com.example.tacocloudwithjpa.repositories;
 
-import data.Ingredient;
+import com.example.tacocloudwithjpa.data.Ingredient;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
