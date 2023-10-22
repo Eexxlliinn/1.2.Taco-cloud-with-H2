@@ -1,22 +1,19 @@
 package com.example.tacocloudwithjpa;
 
+import com.example.tacocloudwithjpa.repositories.IngredientRepository;
 import data.Ingredient;
 import data.TacoOrder;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import data.Taco;
-import data.Ingredient;
 import data.Ingredient.Type;
 
 @Slf4j

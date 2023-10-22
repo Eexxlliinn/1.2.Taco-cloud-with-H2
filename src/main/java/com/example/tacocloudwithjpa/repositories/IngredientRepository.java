@@ -1,4 +1,4 @@
-package com.example.tacocloudwithjpa;
+package com.example.tacocloudwithjpa.repositories;
 
 import data.Ingredient;
 import org.springframework.data.repository.CrudRepository;
