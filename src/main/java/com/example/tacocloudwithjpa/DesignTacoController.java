@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,7 +36,7 @@ public class DesignTacoController {
         Iterable<Ingredient> ingredients = ingredientRepo.findAll();
         Type[] types = Ingredient.Type.values();
         for (Type type : types) {
-            model.addAttribute(type.toString().toLowerCase(), filterByType((List<Ingredient>) ingredients, type));
+            model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
         }
     }
 
@@ -64,8 +65,12 @@ public class DesignTacoController {
         return "redirect:/orders/current";
 
     }
-    private Iterable<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
-        return ingredients
+    private Iterable<Ingredient> filterByType(Iterable<Ingredient> ingredients, Type type) {
+        List<Ingredient> ingredientList = new ArrayList<>();
+        for (Ingredient ingredient : ingredients) {
+            ingredientList.add(ingredient);
+        }
+        return ingredientList
                 .stream()
                 .filter(x -> x.getType().equals(type))
                 .collect(Collectors.toList());
