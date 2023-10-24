@@ -22,6 +22,8 @@ public class Taco {
 
     private Date createdAt = new Date();
 
+    private Long tacoOrder;
+
     @NotNull
     @Size(min = 1, message = "You must choose at least 1 ingredient")
     @ManyToMany()
