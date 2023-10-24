@@ -39,7 +39,7 @@ public class TacoOrder {
     @NotBlank(message = "Zip code is required")
     private String deliveryZip;
 
-    //6525569835968989246 test value
+    // 4174437983750221 test value
     @CreditCardNumber(message = "Not a valid credit card number")
     private String ccNumber;
 
