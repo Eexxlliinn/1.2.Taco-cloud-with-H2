@@ -1,4 +1,8 @@
-create table  if not exists Taco_Order (
+drop sequence taco_sequence if exists;
+drop sequence taco_order_sequence if exists;
+create sequence taco_sequence start with 1 increment by 1;
+create sequence taco_order_sequence start with 1 increment by 1;
+create table if not exists Taco_Order (
     id identity(1, 1) primary key,
     delivery_Name varchar(50) not null,
     delivery_Street varchar(50) not null,
@@ -7,7 +11,7 @@ create table  if not exists Taco_Order (
     delivery_Zip varchar(20) not null,
     cc_number varchar(16) not null,
     cc_expiration varchar(5) not null,
-    cc_cvv varchar(3) not null,
+    cccvv varchar(3) not null,
     placed_at timestamp not null
 );
 create table if not exists Taco (
