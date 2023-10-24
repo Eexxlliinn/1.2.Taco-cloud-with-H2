@@ -1,5 +1,9 @@
+drop table Taco_Order cascade;
+drop table Taco cascade;
+drop table Ingredient_Ref cascade;
+drop table Ingredient cascade;
 create table  if not exists Taco_Order (
-    id identity,
+    id identity(1, 1) primary key,
     delivery_Name varchar(50) not null,
     delivery_Street varchar(50) not null,
     delivery_City varchar(50) not null,
@@ -11,7 +15,7 @@ create table  if not exists Taco_Order (
     placed_at timestamp not null
 );
 create table if not exists Taco (
-    id identity,
+    id identity(1, 1) primary key,
     name varchar(50) not null,
     taco_order bigint not null,
     created_at timestamp not null
@@ -21,7 +25,7 @@ create table if not exists Ingredient_Ref (
     taco bigint not null
 );
 create table if not exists Ingredient (
-    id varchar(4) not null,
+    id varchar(4) primary key,
     name varchar(50) not null,
     type varchar(10) not null
 );
