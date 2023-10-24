@@ -1,7 +1,3 @@
-drop table Taco_Order cascade;
-drop table Taco cascade;
-drop table Ingredient_Ref cascade;
-drop table Ingredient cascade;
 create table  if not exists Taco_Order (
     id identity(1, 1) primary key,
     delivery_Name varchar(50) not null,
