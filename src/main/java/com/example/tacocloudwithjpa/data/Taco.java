@@ -13,7 +13,8 @@ import java.util.List;
 public class Taco {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "taco_seq", sequenceName = "taco_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "taco_seq")
     @Column(name = "id", nullable = false)
     private Long id;
 
