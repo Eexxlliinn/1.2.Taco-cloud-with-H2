@@ -13,8 +13,9 @@ import java.util.List;
 public class Taco {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "taco_seq")
-    @Column(name = "id", nullable = false)
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "taco_seq")
+    //@Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
