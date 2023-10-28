@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,5 +30,6 @@ public class SecurityConfig {
                 "woody",
                 encoder.encode("password"),
                 Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
+        return (UserDetailsService) new InMemoryUserDetailsManager(usersList);
     }
 }
