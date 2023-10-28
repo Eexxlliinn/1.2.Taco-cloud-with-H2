@@ -25,5 +25,9 @@ public class SecurityConfig {
                 "buzz",
                 encoder.encode("password"),
                 Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
+        usersList.add(new User(
+                "woody",
+                encoder.encode("password"),
+                Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
     }
 }
