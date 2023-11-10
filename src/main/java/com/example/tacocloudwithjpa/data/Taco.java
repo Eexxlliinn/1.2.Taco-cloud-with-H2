@@ -24,11 +24,15 @@ public class Taco {
 
     private Date createdAt = new Date();
 
-    private Long tacoOrder;
+    @ManyToOne
+    @JoinColumn(name = "taco_order_id")
+    private TacoOrder tacoOrder;
 
     @NotNull
     @Size(min = 1, message = "You must choose at least 1 ingredient")
     @ManyToMany()
+    @JoinTable(name = "IngredientRef", joinColumns = @JoinColumn(name = "taco_id"),
+            inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
     private List<Ingredient> ingredients;
 
     public void addIngredient(Ingredient ingredient) {
