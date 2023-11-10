@@ -12,3 +12,6 @@ insert into Ingredient(id, name, type) values ('CHED', 'Cheddar', 'CHEESE');
 insert into Ingredient(id, name, type) values ('JACK', 'Monterrey Jack', 'CHEESE');
 insert into Ingredient(id, name, type) values ('SLSA', 'Salsa', 'SAUCE');
 insert into Ingredient(id, name, type) values ('SRCR', 'Sour Cream', 'SAUCE');
+
+drop sequence TACO_ORDER_SEQ if exists;
+CREATE SEQUENCE TACO_ORDER_SEQ START WITH 1 INCREMENT BY 50;
