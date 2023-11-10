@@ -26,12 +26,10 @@ import com.example.tacocloudwithjpa.data.Ingredient.Type;
 public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
-    private final TacoRepository tacoRepository;
 
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepo, TacoRepository tacoRepository) {
+    public DesignTacoController(IngredientRepository ingredientRepo) {
         this.ingredientRepo = ingredientRepo;
-        this.tacoRepository = tacoRepository;
     }
 
     @ModelAttribute
