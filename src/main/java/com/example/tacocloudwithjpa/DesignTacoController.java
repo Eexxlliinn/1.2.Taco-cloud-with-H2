@@ -3,6 +3,7 @@ package com.example.tacocloudwithjpa;
 import com.example.tacocloudwithjpa.repositories.IngredientRepository;
 import com.example.tacocloudwithjpa.data.Ingredient;
 import com.example.tacocloudwithjpa.data.TacoOrder;
+import com.example.tacocloudwithjpa.repositories.TacoRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +26,12 @@ import com.example.tacocloudwithjpa.data.Ingredient.Type;
 public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
+    private final TacoRepository tacoRepository;
 
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepo) {
+    public DesignTacoController(IngredientRepository ingredientRepo, TacoRepository tacoRepository) {
         this.ingredientRepo = ingredientRepo;
-
+        this.tacoRepository = tacoRepository;
     }
 
     @ModelAttribute
@@ -63,6 +65,7 @@ public class DesignTacoController {
         }
         tacoOrder.addTaco(taco);
         log.info("Processing taco: {}", taco);
+
         return "redirect:/orders/current";
 
     }
