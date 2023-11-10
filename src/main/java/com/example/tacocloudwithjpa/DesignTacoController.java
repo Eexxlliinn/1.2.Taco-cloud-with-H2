@@ -3,7 +3,6 @@ package com.example.tacocloudwithjpa;
 import com.example.tacocloudwithjpa.repositories.IngredientRepository;
 import com.example.tacocloudwithjpa.data.Ingredient;
 import com.example.tacocloudwithjpa.data.TacoOrder;
-import com.example.tacocloudwithjpa.repositories.TacoRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
