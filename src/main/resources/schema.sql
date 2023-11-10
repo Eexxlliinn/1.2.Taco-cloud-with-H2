@@ -21,18 +21,17 @@ create table if not exists Taco_Order (
 create table if not exists Taco (
     id identity(1, 1) primary key,
     name varchar(50) not null,
-    taco_order bigint,
+    taco_order_id bigint,
     created_at timestamp not null
 );
 create table if not exists Ingredient_Ref (
-    ingredient varchar(4) not null,
-    taco bigint not null
+    taco_id bigint not null,
+    ingredient_id varchar(4) not null
 );
 create table if not exists Ingredient (
     id varchar(4) primary key,
     name varchar(50) not null,
     type varchar(10) not null
 );
-alter table Taco add foreign key (taco_order) references Taco_Order(id);
-alter table Ingredient_Ref add foreign key (ingredient) references Ingredient(id);
-alter table Ingredient_Ref add foreign key (taco) references Taco(id);
+alter table Ingredient_Ref add foreign key (ingredient_id) references Ingredient(id);
+alter table Ingredient_Ref add foreign key (taco_id) references Taco(id);
