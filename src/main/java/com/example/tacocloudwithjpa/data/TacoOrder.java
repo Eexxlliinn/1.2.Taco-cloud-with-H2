@@ -55,7 +55,7 @@ public class TacoOrder implements Serializable {
     @Size(min = 3, max = 3)
     private String ccCVV;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tacoOrder")
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
