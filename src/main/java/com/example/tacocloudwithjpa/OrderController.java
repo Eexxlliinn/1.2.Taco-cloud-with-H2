@@ -19,10 +19,11 @@ import org.springframework.web.bind.support.SessionStatus;
 @SessionAttributes("tacoOrder")
 public class OrderController {
 
-    private final OrderRepository orderRepo;
+    //private final OrderRepository orderRepo;
+    private final OrderService orderRepo;
 
     @Autowired
-    public OrderController(OrderRepository orderRepo) {
+    public OrderController(OrderService orderRepo) {
         this.orderRepo = orderRepo;
     }
 
