@@ -3,9 +3,10 @@ package com.example.tacocloudwithjpa;
 import com.example.tacocloudwithjpa.data.Taco;
 import com.example.tacocloudwithjpa.data.TacoOrder;
 import com.example.tacocloudwithjpa.repositories.OrderRepository;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class OrderService {
     private final OrderRepository orderRepository;
 
